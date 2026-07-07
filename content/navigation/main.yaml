@@ -1,0 +1,15 @@
+title: Principal
+tree:
+  -
+    entry: /
+    children:
+      - entry: /productos
+        children:
+          - entry: /productos/valvulas
+          - entry: /productos/tuberias
+          - entry: /productos/accesorios
+          - entry: /productos/instrumentacion
+      - entry: /cadena-de-suministro
+      - entry: /proyectos-mro
+      - entry: /acerca-de-nosotros
+      - entry: /contacto

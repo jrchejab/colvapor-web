@@ -1,0 +1,76 @@
+services:
+  app:
+    image: 'php:8.4-fpm'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - 'public-assets:/var/www/html/public'
+      - 'storage:/var/www/html/storage'
+    networks:
+      - default
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+    healthcheck:
+      test: ["CMD", "php", "-v"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  nginx:
+    image: 'nginx:alpine'
+    volumes:
+      - 'public-assets:/var/www/html/public:ro'
+      - 'storage:/var/www/html/storage:ro'
+    networks:
+      - default
+
+  queue:
+    image: 'php:8.4-fpm'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - 'storage:/var/www/html/storage'
+    networks:
+      - default
+    command: ['php', 'artisan', 'queue:work', '--sleep=3', '--tries=3']
+    restart: always
+
+  scheduler:
+    image: 'php:8.4-fpm'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - 'storage:/var/www/html/storage'
+    networks:
+      - default
+    command: ['php', 'artisan', 'schedule:work']
+    restart: always
+
+  mysql:
+    image: 'mysql:8.4'
+    volumes:
+      - 'mysql-data:/var/lib/mysql'
+    networks:
+      - default
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+
+  redis:
+    image: 'redis:alpine'
+    volumes:
+      - 'redis-data:/data'
+    networks:
+      - default
+
+volumes:
+  mysql-data:
+  redis-data:
+  public-assets:
+  storage:

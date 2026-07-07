@@ -1,0 +1,10 @@
+title: Páginas
+propagate: true
+template: default
+layout: layout
+mount: 1
+revisions: false
+sort_dir: asc
+structure:
+  root: true
+  max_depth: 2
