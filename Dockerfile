@@ -28,10 +28,6 @@ COPY . .
 
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
-RUN php artisan key:generate
-
-RUN php artisan storage:link
-
 EXPOSE 9000
 
 CMD ["php-fpm"]
