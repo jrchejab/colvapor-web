@@ -24,8 +24,6 @@ services:
     volumes:
       - 'public-assets:/var/www/html/public:ro'
       - 'storage:/var/www/html/storage:ro'
-    ports:
-      - '80:80'
 
 volumes:
   public-assets:
