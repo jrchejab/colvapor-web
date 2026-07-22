@@ -18,3 +18,5 @@ Route::statamic('/proyectos-mro', 'default');
 Route::statamic('/acerca-de-nosotros', 'default');
 Route::statamic('/contacto', 'contact');
 Route::statamic('/productos', 'product-list');
+Route::statamic('/productos/{slug}', 'product');
+Route::statamic('/{slug}', 'default');
