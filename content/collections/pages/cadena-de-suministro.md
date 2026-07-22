@@ -3,7 +3,7 @@ title: 'Cadena de Suministro'
 id: cadena-de-suministro
 template: default
 image:
-  - '2025/10/cadena_suministro-scaled.jpg'
+  - 'cadena_suministro-scaled.jpg'
 ---
 ## SOLUCIONES A LA CADENA DE SUMINISTRO
 

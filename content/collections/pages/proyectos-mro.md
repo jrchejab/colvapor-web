@@ -3,8 +3,8 @@ title: 'Proyectos / MRO'
 id: proyectos-mro
 template: default
 image:
-  - '2025/10/proyectos.jpg'
-  - '2025/10/mantenimieno-scaled.jpg'
+  - 'proyectos.jpg'
+  - 'mantenimieno-scaled.jpg'
 ---
 ## PROYECTOS
 
