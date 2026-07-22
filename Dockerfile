@@ -26,6 +26,9 @@ WORKDIR /var/www/html
 
 COPY . .
 
+# Backup public/img to a non-volume path for initialization on first run
+RUN cp -r /var/www/html/public/img /var/www/html/public-img-default
+
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
 COPY docker/entrypoint.sh /usr/local/bin/docker-entrypoint
