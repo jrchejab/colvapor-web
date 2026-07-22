@@ -66,27 +66,33 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <nav class="flex items-center h-[60px]">
                         <ul class="flex items-center gap-0">
-                            {{ nav:main }}
-                                <li class="relative group {{ if children }}has-children{{ /if }}">
-                                    <a href="{{ if entry_id === "home" }}/{{ else }}{{ url }}{{ /if }}" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors {{ if is_current }}text-white{{ /if }}">
-                                        {{ title }}
-                                        {{ if children }}
-                                            <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                        {{ /if }}
-                                    </a>
-                                    {{ if children }}
-                                        <ul class="absolute left-0 mt-0 w-64 bg-[#565656] border border-[#4B4F58] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                            {{ children }}
-                                                <li>
-                                                    <a href="/productos/{{ slug }}" class="block px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4a4a4a] hover:text-white border-b border-[#4B4F58] last:border-b-0">
-                                                        {{ title }}
-                                                    </a>
-                                                </li>
-                                            {{ /children }}
-                                        </ul>
-                                    {{ /if }}
-                                </li>
-                            {{ /nav:main }}
+                            <li class="relative group">
+                                <a href="/" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">Inicio</a>
+                            </li>
+                            <li class="relative group has-children">
+                                <a href="/productos" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">
+                                    Productos
+                                    <svg class="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </a>
+                                <ul class="absolute left-0 mt-0 w-64 bg-[#565656] border border-[#4B4F58] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                    <li><a href="/productos/valvulas" class="block px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4a4a4a] hover:text-white border-b border-[#4B4F58] last:border-b-0">Válvulas</a></li>
+                                    <li><a href="/productos/tuberias" class="block px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4a4a4a] hover:text-white border-b border-[#4B4F58] last:border-b-0">Tuberías</a></li>
+                                    <li><a href="/productos/accesorios" class="block px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4a4a4a] hover:text-white border-b border-[#4B4F58] last:border-b-0">Accesorios</a></li>
+                                    <li><a href="/productos/instrumentacion" class="block px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4a4a4a] hover:text-white border-b border-[#4B4F58] last:border-b-0">Instrumentación y Control</a></li>
+                                </ul>
+                            </li>
+                            <li class="relative group">
+                                <a href="/cadena-de-suministro" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">Cadena de Suministro</a>
+                            </li>
+                            <li class="relative group">
+                                <a href="/proyectos-mro" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">Proyectos / MRO</a>
+                            </li>
+                            <li class="relative group">
+                                <a href="/acerca-de-nosotros" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">Acerca de Nosotros</a>
+                            </li>
+                            <li class="relative group">
+                                <a href="/contacto" class="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-gray-300 transition-colors">Contacto / PQR</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
