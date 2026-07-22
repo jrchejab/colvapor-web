@@ -1,0 +1,23 @@
+<div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <a href="/productos/{{ category }}" class="inline-flex items-center text-gray-500 hover:text-gray-700 mb-4 transition-colors text-xs uppercase tracking-wider font-semibold">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            Volver a {{ category | title }}
+        </a>
+        <h1 class="text-3xl font-bold text-gray-900">{{ title }}</h1>
+        {{ if title_en }}
+            <p class="mt-1 text-gray-500">{{ title_en }}</p>
+        {{ /if }}
+    </div>
+</div>
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    {{ if image }}
+        <div class="mb-8 rounded-lg border border-gray-100 overflow-hidden">
+            <img src="https://colvapor.com/colvapor_new/wp-content/uploads/2025/10/{{ image }}" alt="{{ title }}" class="w-full h-auto object-contain bg-gray-50 max-h-96">
+        </div>
+    {{ /if }}
+    <div class="prose prose-lg max-w-none prose-headings:text-gray-900 prose-strong:text-gray-900 prose-ul:list-disc prose-li:marker:text-gray-400">
+        {{ content }}
+    </div>
+</article>

@@ -1,7 +1,9 @@
 ---
-title: Acerca de Nosotros
+title: 'Acerca de Nosotros'
 id: acerca-de-nosotros
 template: default
+image:
+  - '2025/10/about-3.png'
 ---
 ## ACERCA DE NOSOTROS
 
