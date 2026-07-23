@@ -13,9 +13,9 @@ Route::statamic('/productos/{category}', 'category', function ($category) {
     ];
 })->where('category', 'valvulas|tuberias|accesorios|instrumentacion|corrosion');
 
-Route::statamic('/cadena-de-suministro', 'default');
-Route::statamic('/proyectos-mro', 'default');
-Route::statamic('/acerca-de-nosotros', 'default');
+Route::statamic('/cadena-de-suministro', 'cadena');
+Route::statamic('/proyectos-mro', 'proyectos');
+Route::statamic('/acerca-de-nosotros', 'acerca');
 Route::statamic('/contacto', 'contact');
 Route::statamic('/productos', 'product-list');
 Route::statamic('/productos/{slug}', 'product');
